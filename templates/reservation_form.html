@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+{%  load static %}
+
+{% block import %}
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{% static 'calendar-07/css/style.css' %}">
+{% endblock %}
+
+{% block body_content %}
+    <section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Réservez un appel de découverte</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="elegant-calencar d-md-flex">
+						<div class="wrap-header d-flex align-items-center img">
+				      <p id="reset">Today</p>
+			        <div id="header" class="p-0">
+								<!-- <div class="pre-button d-flex align-items-center justify-content-center"><i class="fa fa-chevron-left"></i></div> -->
+		            <div class="head-info">
+		            	<div class="head-month"></div>
+		                <div class="head-day"></div>
+		            </div>
+		            <!-- <div class="next-button d-flex align-items-center justify-content-center"><i class="fa fa-chevron-right"></i></div> -->
+			        </div>
+			      </div>
+			      <div class="calendar-wrap">
+			      	<div class="w-100 button-wrap">
+				      	<div class="pre-button d-flex align-items-center justify-content-center"><i class="fa fa-chevron-left"></i></div>
+				      	<div class="next-button d-flex align-items-center justify-content-center"><i class="fa fa-chevron-right"></i></div>
+			      	</div>
+                      <form action="" method="post">
+                          {% csrf_token %}
+                            <table id="calendar" onclick="setDate()">
+                            <thead>
+                                <tr>
+                                <th>Sun</th>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            {{ form }}
+                            {% for message in messages %}
+                                  <div class="alert alert-warning">
+                                        {{ message }}
+                                  </div>
+                            {% endfor %}
+                            <button type="submit" class="btn btn-primary btn-lg">Valider</button>
+                        </form>
+			      </div>
+			    </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'calendar-07/js/jquery.min.js' %}"></script>
+  <script src="{% static 'calendar-07/js/popper.js' %}"></script>
+  <script src="{% static 'calendar-07/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'calendar-07/js/main.js' %}"></script>
+    <script>
+    document.getElementById('id_date').type = "hidden";
+    document.getElementsByTagName('label')[0].remove();
+    function setDate() {
+        let mois_annee = document.getElementsByClassName('head-month')[0].textContent;
+        let day = document.getElementsByClassName('head-day')[0].textContent;
+        mois_annee=convDate(mois_annee);
+        console.log(mois_annee);
+        let date = mois_annee[2]+"-"+mois_annee[0]+"-"+day;
+        let form = document.getElementById('id_date').value = date;
+    }
+
+    function previousSelectedDate() {
+
+    }
+
+    function convDate(mois_annee) {
+        let month_year = mois_annee.split(' ');
+        switch (month_year[0][0]) {
+            case 'J':
+                month_year[0] = '01';
+                break;
+            case 'F':
+                month_year[0] = '02';
+                break;
+            case 'Mar':
+                month_year[0] = '03';
+                break;
+            case 'Ap':
+                month_year[0] = '04';
+                break;
+            case 'May':
+                month_year[0] = '05';
+                break;
+            case 'Jun':
+                month_year[0] = '06';
+                break;
+            case 'jul':
+                month_year[0] = '07';
+                break;
+            case 'Au':
+                month_year[0] = '08';
+                break;
+            case 'S':
+                month_year[0] = '09';
+                break;
+            case 'O':
+                month_year[0] = '10';
+                break;
+            case 'N':
+                month_year[0] = '11';
+                break;
+            case 'D':
+                month_year[0] = '12';
+                break;
+            default:
+                console.log(`Sorry, we are out.`);
+                break;
+        }
+        return month_year
+    }
+    </script>
+
+{% endblock %}
+
+

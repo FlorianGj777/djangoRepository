@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body_content %}
+    <h1>Date de vos réservation</h1>
+    <ul>
+    {% for r in user.reservations.all %}
+        <li style='list-style-type: none;'>
+            <button type="button" class="btn btn-primary"><a style='color:white;text-decoration:none;' href="{% url 'calendar_update' r.id %}">{{ r }}</a></button>
+            <button type="button" class="btn btn-danger"><a style='color:white;' href="{% url 'calendar_delete' r.id %}">X</a></button></li><br>
+        </li>
+    {% endfor %}
+    </ul>
+    <br><a href="{% url 'index' %}"><button type="submit" class="btn btn-primary btn-lg">Acceuil</button></a>
+{% endblock %}
+
