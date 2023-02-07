@@ -22,6 +22,9 @@ J'ai utilisé les library vues en cour qui sont:
 - Bootstrap
 - AdminLTE
 
+# Adresse du site
+[Delfy](https://floriangrosjean.pythonanywhere.com/)
+
 ## Conclusion
 
 Ce projet m'a permis de développer mes compétences en utilisant le framework Django. J'ai appris à gérer les comptes utilisateurs, a faire des réservations, utiliser des roots et les méthodes create, read, update, delete. Je suis convaincu que cet apprentissage sera utile pour mes projets futurs en utilisant ce framework.
