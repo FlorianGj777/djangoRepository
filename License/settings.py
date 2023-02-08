@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'recipes.apps.RecipesConfig',
+    'calendar.apps.CalendarConfig',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +52,7 @@ MIDDLEWARE = [
 
 ]
 MIDDLEWARE_CLASSES = (
-    'recipes.Views.login_view.AuthRequiredMiddleware',
+    'calendar.Views.login_view.AuthRequiredMiddleware',
 )
 
 ROOT_URLCONF = 'License.urls'

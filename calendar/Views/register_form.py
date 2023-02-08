@@ -3,7 +3,7 @@ from django.core.checks import messages
 from django.urls import reverse
 from django.views import generic
 
-from recipes.forms.register import RegisterForm
+from calendar.forms.register import RegisterForm
 
 
 class RegisterFormView(generic.FormView):

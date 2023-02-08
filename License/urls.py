@@ -17,14 +17,14 @@ from django.contrib import admin
 from django.contrib.auth.views import LogoutView
 from django.urls import path
 
-from recipes.Views.Reservation_form import ReservationFormView
-from recipes.Views.index_view import IndexView
-from recipes.Views.register_form import RegisterFormView
-from recipes.Views.reservation_delete_view import ReservationDeleteView
-from recipes.Views.reservation_list_view import ReservationListView
-from recipes.Views.reservation_update_view import ReservationUpdateView
+from calendar.Views.Reservation_form import ReservationFormView
+from calendar.Views.index_view import IndexView
+from calendar.Views.register_form import RegisterFormView
+from calendar.Views.reservation_delete_view import ReservationDeleteView
+from calendar.Views.reservation_list_view import ReservationListView
+from calendar.Views.reservation_update_view import ReservationUpdateView
 
-from recipes.Views.login_view import LoginView
+from calendar.Views.login_view import LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),

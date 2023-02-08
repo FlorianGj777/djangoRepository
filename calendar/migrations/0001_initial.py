@@ -58,7 +58,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('date', models.DateField(blank=True, default=datetime.date.today)),
-                ('personne', models.ForeignKey(default='g21219289', on_delete=django.db.models.deletion.CASCADE, related_name='reservations', to='recipes.personne')),
+                ('personne', models.ForeignKey(default='g21219289', on_delete=django.db.models.deletion.CASCADE, related_name='reservations', to='calendar.personne')),
             ],
         ),
         migrations.CreateModel(
@@ -67,14 +67,14 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('value', models.FloatField(default=1.0)),
                 ('unit_is_displayed', models.BooleanField(default=True)),
-                ('ingredient', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='recipes.ingredient')),
-                ('recipe', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='ingredients_units', to='recipes.recipe')),
-                ('unit', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='recipes.unit')),
+                ('ingredient', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='calendar.ingredient')),
+                ('recipe', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='ingredients_units', to='calendar.recipe')),
+                ('unit', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='calendar.unit')),
             ],
         ),
         migrations.AddField(
             model_name='recipe',
             name='tags',
-            field=models.ManyToManyField(related_name='recipes', to='recipes.tag'),
+            field=models.ManyToManyField(related_name='calendar', to='calendar.tag'),
         ),
     ]

@@ -1,7 +1,7 @@
 from django.urls import reverse
 from django.views.generic import UpdateView
 
-from recipes.Models.reservation import Reservation
+from calendar.Models.reservation import Reservation
 
 
 class ReservationUpdateView(UpdateView):

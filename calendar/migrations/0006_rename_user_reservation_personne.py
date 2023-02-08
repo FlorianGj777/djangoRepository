@@ -6,7 +6,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('recipes', '0005_rename_personne_reservation_user'),
+        ('calendar', '0005_rename_personne_reservation_user'),
     ]
 
     operations = [

@@ -1,6 +1,6 @@
 from django.views.generic import ListView
 
-from recipes.Models.reservation import Reservation
+from calendar.Models.reservation import Reservation
 
 
 class ReservationListView(ListView):

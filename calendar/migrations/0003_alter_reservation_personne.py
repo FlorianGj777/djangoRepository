@@ -7,13 +7,13 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('recipes', '0002_alter_personne_user'),
+        ('calendar', '0002_alter_personne_user'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='reservation',
             name='personne',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reservations', to='recipes.personne'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reservations', to='calendar.personne'),
         ),
     ]

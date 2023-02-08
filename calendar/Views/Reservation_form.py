@@ -3,8 +3,8 @@ from django.http import request
 from django.urls import reverse
 from django.views import generic
 
-from recipes.Models.reservation import Reservation
-from recipes.forms.reservation import ReservationForm
+from calendar.Models.reservation import Reservation
+from calendar.forms.reservation import ReservationForm
 
 
 class ReservationFormView(generic.FormView):

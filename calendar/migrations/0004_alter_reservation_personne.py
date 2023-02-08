@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('recipes', '0003_alter_reservation_personne'),
+        ('calendar', '0003_alter_reservation_personne'),
     ]
 
     operations = [
