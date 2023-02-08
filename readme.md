@@ -9,6 +9,8 @@ Ce site permettra aux utilisateurs de :
 - Se connecter
 - Se déconnecter
 - Réserver un appel
+- Changer leur date de réservation
+- Supprimer leur date de réservation
 - Afficher leur liste de réservations
 
 Il est important de noter que lors de la réservation d'un appel, l'utilisateur ne peut pas sélectionner une date qu'il a déja réservé ou qui est antérieure à celle du jour.
